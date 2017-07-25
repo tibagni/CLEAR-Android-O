@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Android Features</string>
+    <string name="job_scheduler_title">Job Scheduler</string>
+</resources>
