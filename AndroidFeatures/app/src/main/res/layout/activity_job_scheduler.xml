@@ -1,9 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.clear.androidfeatures.jobscheduler.JobSchedulerActivity">
+    android:orientation="vertical"
+    tools:context="com.clear.androidfeatures.jobscheduler.activities.JobSchedulerActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/job_periodic_schedule"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Start periodic job"/>
+
+        <Button
+            android:id="@+id/job_periodic_cancel"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel periodic job"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/job_connectivity_schedule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start connectivity changes job"/>
+
+    <Button
+        android:id="@+id/job_uri_schedule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start uri changes job"/>
+
+    <Button
+        android:id="@+id/job_infinite_loop_schedule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start infinite loop job"/>
+
+    <Button
+        android:id="@+id/dump_pending_jobs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dump all pending jobs"/>
+
+
+
+</LinearLayout>
