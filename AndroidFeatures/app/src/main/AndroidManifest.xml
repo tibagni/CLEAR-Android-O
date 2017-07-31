@@ -13,7 +13,6 @@
         <activity android:name=".IndexActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -24,6 +23,11 @@
                 <action android:name="com.clear.ACTION_FEATURE_ACTIVITY" />
             </intent-filter>
         </activity>
+        <service android:name=".jobscheduler.MyJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="false">
+        </service>
+
     </application>
 
 </manifest>

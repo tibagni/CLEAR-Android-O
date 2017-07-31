@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.clear.androidfeatures.jobscheduler.JobSchedulerActivity">
 
+    <Button
+        android:id="@+id/button_schedule_job"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Schedule Job"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="210dp" />
 </android.support.constraint.ConstraintLayout>
