@@ -1,6 +1,8 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Android Features</string>
     <string name="job_scheduler_title">Job Scheduler</string>
+    <string name="jobinfo_builder_title">JobInfo Builder</string>
+    <string name="jobintentservice_title">JobIntentService tests</string>
 
     <!-- JobInfo -->
     <string name="job_info_title">Job Info</string>
