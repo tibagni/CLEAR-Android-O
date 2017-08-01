@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.clear.androidfeatures">
 
+    <!-- Needed to persist the JobService -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -42,6 +44,19 @@
             android:name=".jobscheduler.services.InfiniteLoopJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
+        <activity android:name=".jobinfo.JobInfoActivity"
+            android:label="@string/job_info_title">
+            <intent-filter>
+                <action android:name="com.clear.ACTION_FEATURE_ACTIVITY" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".jobinfo.JobInfoSettingsActivity"
+            android:label="@string/job_info_settings_title"
+            android:parentActivityName=".jobinfo.JobInfoActivity"/>
+
+        <service android:name=".jobinfo.JobInfoService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
 </manifest>
