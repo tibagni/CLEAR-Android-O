@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Android Features</string>
     <string name="job_scheduler_title">Job Scheduler</string>
+    <string name="content_uri_listener">Content URI Listener</string>
 </resources>

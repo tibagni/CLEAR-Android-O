@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context="com.clear.androidfeatures.jobscheduler.JobSchedulerActivity">
 
+    <Switch
+        android:id="@+id/content_uri_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/content_uri_listener"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

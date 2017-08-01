@@ -24,6 +24,9 @@
                 <action android:name="com.clear.ACTION_FEATURE_ACTIVITY" />
             </intent-filter>
         </activity>
-    </application>
 
+        <service android:name=".jobscheduler.NewMediaAddedService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+    </application>
 </manifest>
