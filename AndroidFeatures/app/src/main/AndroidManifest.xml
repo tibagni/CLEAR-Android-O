@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.clear.androidfeatures">
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,12 +19,29 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".jobscheduler.JobSchedulerActivity"
+        <activity android:name=".jobscheduler.activities.JobSchedulerActivity"
             android:label="@string/job_scheduler_title">
             <intent-filter>
                 <action android:name="com.clear.ACTION_FEATURE_ACTIVITY" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".jobscheduler.services.ConnectivityChangesJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <service
+            android:name=".jobscheduler.services.PeriodicJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <service
+            android:name=".jobscheduler.services.UriChangesJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <service
+            android:name=".jobscheduler.services.InfiniteLoopJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
     </application>
 
 </manifest>
