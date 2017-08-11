@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference
+        android:key="switch_charging"
+        android:title="@string/job_info_pref_charging_title" />
+    <SwitchPreference
+        android:key="switch_battery_not_low"
+        android:title="@string/job_info_pref_battery_not_low_title"
+        android:enabled="@bool/job_info_battery_storage_supported"
+        android:summary="@string/job_info_battery_storage_unsupported_summary"/>
+    <SwitchPreference
+        android:key="switch_storage_not_low"
+        android:title="@string/job_info_pref_storage_not_low_title"
+        android:enabled="@bool/job_info_battery_storage_supported"
+        android:summary="@string/job_info_battery_storage_unsupported_summary"/>
+    <SwitchPreference
+        android:key="switch_idle"
+        android:title="@string/job_info_pref_idle_title" />
+    <SwitchPreference
+        android:key="switch_persist"
+        android:title="@string/job_info_pref_persist_title" />
+    <ListPreference
+        android:entries="@array/job_info_network_type_entries"
+        android:entryValues="@array/job_info_network_type_values"
+        android:defaultValue="0"
+        android:key="list_network_type"
+        android:title="@string/job_info_pref_network_type_title" />
+    <ListPreference
+        android:defaultValue="0"
+        android:entries="@array/job_info_periodic_time_entries"
+        android:entryValues="@array/job_info_periodic_time_values"
+        android:key="list_periodic_time"
+        android:title="@string/job_info_pref_periodic_time_title" />
+    <ListPreference
+        android:defaultValue="0"
+        android:entries="@array/job_info_flex_time_entries"
+        android:entryValues="@array/job_info_flex_time_values"
+        android:key="list_flex_time"
+        android:title="@string/job_info_pref_flex_time_title" />
+    <ListPreference
+        android:entries="@array/job_info_latency_entries"
+        android:entryValues="@array/job_info_latency_values"
+        android:defaultValue="0"
+        android:key="list_minimum_latency"
+        android:title="@string/job_info_pref_minimum_latency" />
+    <ListPreference
+        android:entries="@array/job_info_deadline_entries"
+        android:entryValues="@array/job_info_deadline_values"
+        android:defaultValue="-1"
+        android:key="list_override_deadline"
+        android:title="@string/job_info_pref_override_deadline" />
+    <ListPreference
+        android:entries="@array/job_info_backoff_time_entries"
+        android:entryValues="@array/job_info_backoff_time_values"
+        android:defaultValue="30000"
+        android:key="list_backoff_time"
+        android:title="@string/job_info_pref_initial_backoff_title" />
+    <ListPreference
+        android:entries="@array/job_info_backoff_policy_entries"
+        android:entryValues="@array/job_info_backoff_policy_values"
+        android:defaultValue="1"
+        android:key="list_backoff_policy"
+        android:title="@string/job_info_pref_backoff_policy_title" />
+    <EditTextPreference
+        android:key="edit_trigger_content_uri"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/job_info_pref_trigger_content_uri" />
+    <SwitchPreference
+        android:key="switch_trigger_content_notify_descendants"
+        android:title="@string/job_info_pref_trigger_content_notify_descendants" />
+    <ListPreference
+        android:defaultValue="10000"
+        android:entries="@array/job_info_trigger_content_update_delay_entries"
+        android:entryValues="@array/job_info_trigger_content_update_delay_values"
+        android:key="list_trigger_content_update_delay"
+        android:title="@string/job_info_pref_trigger_content_update_delay" />
+    <ListPreference
+        android:defaultValue="120000"
+        android:entries="@array/job_info_trigger_content_max_delay_entries"
+        android:entryValues="@array/job_info_trigger_content_max_delay_values"
+        android:key="list_trigger_content_max_delay"
+        android:title="@string/job_info_pref_trigger_content_max_delay" />
+</PreferenceScreen>

@@ -1,4 +1,37 @@
 <resources>
     <string name="app_name">Android Features</string>
     <string name="job_scheduler_title">Job Scheduler</string>
+
+    <!-- JobInfo -->
+    <string name="job_info_title">Job Info</string>
+    <string name="job_info_settings_title">Settings</string>
+    <string name="job_info_text_message">Notification message:</string>
+    <string name="job_info_edit_message_default">Job has executed</string>
+    <string name="job_info_message_when_empty">&lt;no message&gt;</string>
+    <string name="job_info_button_schedule_job">Schedule job</string>
+    <string name="job_info_button_cancel_job">Cancel job</string>
+    <string name="job_info_schedule_job_failed">Failed to schedule job</string>
+    <string name="job_info_pref_charging_title">Charging</string>
+    <string name="job_info_pref_network_type_title">Network type</string>
+    <string name="job_info_pref_battery_not_low_title">Battery not-low</string>
+    <string name="job_info_pref_storage_not_low_title">Storage not-low</string>
+    <string name="job_info_battery_storage_unsupported_summary">Not available on this Android version</string>
+    <string name="job_info_pref_idle_title">Device idle</string>
+    <string name="job_info_pref_persist_title">Persist on reboot</string>
+    <string name="job_info_pref_periodic_time_title">Periodic time</string>
+    <string name="job_info_pref_flex_time_title">Flex window</string>
+    <string name="job_info_pref_minimum_latency">Minimum latency</string>
+    <string name="job_info_pref_override_deadline">Maximum deadline</string>
+    <string name="job_info_pref_initial_backoff_title">Backoff time</string>
+    <string name="job_info_pref_backoff_policy_title">Backoff policy</string>
+    <string name="job_info_pref_trigger_content_uri">Trigger content URI</string>
+    <string name="job_info_pref_trigger_content_notify_descendants">Trigger content notify descendants</string>
+    <string name="job_info_pref_trigger_content_update_delay">Trigger content update delay</string>
+    <string name="job_info_pref_trigger_content_max_delay">Trigger content maximum delay</string>
+    <string name="job_info_pref_toast">Job %1$d: %2$s</string>
+    <plurals name="job_info_toast_triggered_content">
+        <item quantity="zero">No items changed</item>
+        <item quantity="one">%d item changed</item>
+        <item quantity="other">%d items changed</item>
+    </plurals>
 </resources>
