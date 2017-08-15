@@ -34,4 +34,8 @@
         <item quantity="one">%d item changed</item>
         <item quantity="other">%d items changed</item>
     </plurals>
+
+    <!-- JobIntentService -->
+    <string name="job_intent_service_title">Job Intent Service</string>
+    <string name="job_intent_service_button_enqueue">Enqueue job</string>
 </resources>

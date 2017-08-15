@@ -4,6 +4,8 @@
 
     <!-- Needed to persist the JobService -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- Needed to run JobIntentService on API <26 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -56,6 +58,18 @@
             android:parentActivityName=".jobinfo.JobInfoActivity"/>
 
         <service android:name=".jobinfo.JobInfoService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity android:name=".jobintentservice.JobIntentServiceActivity"
+            android:label="@string/job_intent_service_title">
+            <intent-filter>
+                <action android:name="com.clear.ACTION_FEATURE_ACTIVITY" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".jobintentservice.JobIntentServiceFragment$ProgressUpdateReceiver" />
+
+        <service android:name=".jobintentservice.JobIntentServiceService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
