@@ -51,19 +51,30 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/enqueue_job_start"
+        <LinearLayout
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Enqueue job"/>
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/enqueue_job_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enqueue job"/>
+
+            <Button
+                android:id="@+id/enqueue_job_nocomplete_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enqueue job without completing"/>
+        </LinearLayout>
 
         <Button
             android:id="@+id/enqueue_job_cancel"
             android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Cancel periodic job"/>
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:text="Cancel enqueued job"/>
     </LinearLayout>
 
     <Button

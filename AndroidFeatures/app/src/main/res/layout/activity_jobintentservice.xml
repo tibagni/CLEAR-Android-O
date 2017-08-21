@@ -12,6 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick"
-        android:text="Enqueue job"/>
+        android:text="Enqueue several jobs"/>
 
+    <Button
+        android:id="@+id/enqueue_jobintentservice_delayed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="Enqueue several jobs delayed"/>
 </LinearLayout>

@@ -73,6 +73,14 @@ public class JobSchedulerActivity extends AppCompatActivity {
             }
         });
 
+        Button enqueueStartNoCompleted = findViewById(R.id.enqueue_job_nocomplete_start);
+        enqueueStartNoCompleted.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EnqueueJobService.enqueueJobServiceWithoutComplete(getBaseContext());
+            }
+        });
+
         Button enqueueCancel = (Button) findViewById(R.id.enqueue_job_cancel);
         enqueueCancel.setOnClickListener(new View.OnClickListener() {
             @Override
