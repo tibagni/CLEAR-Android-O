@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.clear.androidfeatures.R;
 import com.clear.androidfeatures.jobscheduler.services.ConnectivityChangesJobService;
+import com.clear.androidfeatures.jobscheduler.services.EnqueueJobService;
 import com.clear.androidfeatures.jobscheduler.services.InfiniteLoopJobService;
 import com.clear.androidfeatures.jobscheduler.services.JobServiceBase;
 import com.clear.androidfeatures.jobscheduler.services.PeriodicJobService;
@@ -61,6 +62,30 @@ public class JobSchedulerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 InfiniteLoopJobService.scheduleInfiniteLoopJob(getBaseContext());
+            }
+        });
+
+        Button enqueueStart = (Button) findViewById(R.id.enqueue_job_start);
+        enqueueStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EnqueueJobService.enqueueJobService(getBaseContext());
+            }
+        });
+
+        Button enqueueStartNoCompleted = findViewById(R.id.enqueue_job_nocomplete_start);
+        enqueueStartNoCompleted.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EnqueueJobService.enqueueJobServiceWithoutComplete(getBaseContext());
+            }
+        });
+
+        Button enqueueCancel = (Button) findViewById(R.id.enqueue_job_cancel);
+        enqueueCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EnqueueJobService.cancelJob(getBaseContext(), JobServiceBase.Jobs.ENQUEUE.getJobId());
             }
         });
 

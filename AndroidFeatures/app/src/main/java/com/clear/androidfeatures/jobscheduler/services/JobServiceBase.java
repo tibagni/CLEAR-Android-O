@@ -4,6 +4,7 @@ import android.app.job.JobInfo;
 import android.app.job.JobParameters;
 import android.app.job.JobScheduler;
 import android.app.job.JobService;
+import android.app.job.JobWorkItem;
 import android.content.ComponentName;
 import android.content.Context;
 import android.os.Handler;
@@ -30,7 +31,9 @@ public abstract class JobServiceBase extends JobService {
         CONNECTIVITY_CHANGES(1),
         PERIODIC(2),
         URI_CHANGES(3),
-        INFINITE_LOOP(4);
+        INFINITE_LOOP(4),
+        JOBINFO_BUILDER(5),
+        ENQUEUE(6);
 
         private int mId;
 
@@ -150,6 +153,30 @@ public abstract class JobServiceBase extends JobService {
 
             case JobScheduler.RESULT_SUCCESS:
                 Log.d(TAG, "Success to schedule job");
+                break;
+        }
+    }
+
+    /**
+     * Enqueue a job.
+     * @param ctx The Context.
+     * @param jobInfo The @JobInfo.
+     * @param workItem The JobWorkItem.
+     */
+    protected static void enqueueJob(Context ctx, JobInfo jobInfo, JobWorkItem workItem) {
+        Log.d(TAG, "enqueue job - id: " + jobInfo.getId());
+
+        JobScheduler jobScheduler =
+                (JobScheduler) ctx.getSystemService(Context.JOB_SCHEDULER_SERVICE);
+        int result = jobScheduler.enqueue(jobInfo, workItem);
+
+        switch (result) {
+            case JobScheduler.RESULT_FAILURE:
+                Log.d(TAG, "Fail to enqueue job");
+                break;
+
+            case JobScheduler.RESULT_SUCCESS:
+                Log.d(TAG, "Success to enqueue job");
                 break;
         }
     }

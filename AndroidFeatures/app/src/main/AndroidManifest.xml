@@ -5,6 +5,8 @@
     <!-- Needed to persist the JobService -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,6 +30,20 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".jobscheduler.activities.JobInfoBuilderActivity"
+                  android:label="@string/jobinfo_builder_title">
+            <intent-filter>
+                <action android:name="com.clear.ACTION_FEATURE_ACTIVITY" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".jobscheduler.activities.JobIntentServiceActivity"
+                  android:label="@string/jobintentservice_title">
+            <intent-filter>
+                <action android:name="com.clear.ACTION_FEATURE_ACTIVITY" />
+            </intent-filter>
+        </activity>
+
         <service
             android:name=".jobscheduler.services.ConnectivityChangesJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
@@ -42,6 +58,18 @@
 
         <service
             android:name=".jobscheduler.services.InfiniteLoopJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <service
+            android:name=".jobscheduler.services.JobInfoBuilderTestsJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <service
+            android:name=".jobscheduler.services.EnqueueJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <service
+            android:name=".jobscheduler.services.TestJobIntentService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <activity android:name=".jobinfo.JobInfoActivity"
